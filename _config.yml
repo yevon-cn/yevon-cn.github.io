@@ -1,0 +1,77 @@
+##基本信息##=====================
+
+#根路径
+#baseurl: /
+author: Leafer
+
+
+
+### URL配置
+url:
+  #base path 使用同baseurl，主要用于post.url
+  #eg: /test,/doc,http://www.test.com 最后不要/
+  bpath: 
+
+  # asset path 资源根路径
+  apath: /asset
+  theme: /theme/ever
+
+  #post img path
+  pipath: /post_rs/img
+
+##导航栏配置
+nav_urls: 
+  Tags: /tags.html
+  About: /about.html
+  存档: /archive.html
+  留言: /message.html
+
+
+##站点配置信息##========================
+LF:
+  #网站名称
+  name: Leafer
+
+  #版本信息
+  version: 0.0.0
+
+  #作者信息
+  author: Leafer
+
+  #评论系统配置
+
+
+  #流量分析配置
+
+
+  #分享功能配置
+
+
+
+##Jekyll配置信息##========================
+#markdown引擎
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+    - tables
+
+#开启语法高亮插件
+pygments: true
+
+#生成静态内容时滤去下列不必要的文件
+exclude: ["Gemfile", "Gemfile.lock"]
+
+
+#生成的页面URL形式
+permalink: /:year/:month/:day/:title.html
+
+#分页设置项
+#paginate: 12
+
+
+

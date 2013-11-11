@@ -1,0 +1,15 @@
+---
+layout: page
+desc: 文章模板
+---
+<div class="lf_post">
+	<h1 class="lf_post_title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+	<div class="lf_meta">
+		<div class="lf_date_author">Post @ {% include date_format date=page.date %} {% if site.author %}by {{ site.author }}{% endif%}</div>
+		{% if page.tags %}{% include tags _tags = page.tags %}{% endif %}
+	</div>
+	<div class="lf_content lf_markdown">
+      {{ content }}
+	</div>	
+</div>
+

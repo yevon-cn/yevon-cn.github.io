@@ -1,0 +1,1 @@
+{% capture _imgurl %}{{ site.url.pipath }}/{{ page.date | date: '%Y/%m' }}/{{ page.id | split: '/' | last }}{% endcapture %}

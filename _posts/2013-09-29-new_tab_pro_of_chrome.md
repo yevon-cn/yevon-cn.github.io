@@ -1,0 +1,65 @@
+---
+layout: post
+date: 2013-09-29 21:54
+title: Chrome升级后打开新的标签页变样了……
+tags:
+- Chrome
+imgZoom: true
+---
+{% include defImgUrl %}
+
+最近更新Chrome后，打开新的标签页完全变样了，让人不知所措，特别是没有了那个“最近关闭标签页”按钮，这让我抓狂……
+**PS：**Chrome版本号为:29.0.1547.76 m
+
+更可恨的是这个新的标签页还这么“难看”（不同电脑可能不同~，至少好像我电脑上的好像怪怪的-_-!），如下图所示：
+
+<!--![Alt text]({{ _imgurl }}/error_home.jpg)-->
+{% include img name="error_home.jpg" %}
+
+虽然简洁了似乎，但却少了重要的按钮…… 如下图原来的样子：
+
+<!--![Alt text]({{ _imgurl }}/good.jpg)-->
+{% include img name="good.jpg" %}
+
+
+在右下角中有“最近关闭的标签页”，正是我想要的，当在关闭chrome时还开着n个窗口，下次启动chrome后，在“最近关闭的标签页”处可以还原之前所有打开的窗口。
+
+但是在更新后打开新的标签页上就没了这个按钮，似乎被搬到右上角的菜单中了，在更新后有如下提示：
+
+<!--![Alt text]({{ _imgurl }}/is_new.jpg)-->
+{% include img name="is_new.jpg" %}
+
+看似确实是搬到右上角的菜单中了，我也看到了，但是在我把Chrome关闭后（关闭前打开着n个窗口），重新开启Chrome，在右上角的最近关闭的标签页并未找到打开上次关闭Chrome前所有标签的按钮…… 于是乎我只能到历史记录中一个个打开来了……
+
+当然有种折中的方法是在设置中设置如下：
+
+<!--![Alt text]({{ _imgurl }}/another_way.jpg)-->
+{% include img name="another_way.jpg" %}
+
+原先我是设置成“打开新的标签页”的，现在改为继续上次关闭浏览器在看的网页，这样打开Chrome就能恢复上次浏览的，只是只能靠浏览器自动完成……
+
+对于这种方法我并不喜欢，所以网上搜罗了下终于找到解决方法，这个需要改动Chrome的一些配置。
+
+在浏览器输入：chrome://flags
+然后找到下图配置信息(可搜索关键字Instant Extended)，这个应该就是针对翻新的打开新标签页的配置了。
+
+<!--![Alt text]({{ _imgurl }}/default.jpg)-->
+{% include img name="default.jpg" %}
+
+
+ 修改为如下，即“已停用”来禁用它，似乎默认就是启用了，估计在以前的版本中默认是停用的吧，所以之前没出现这个问题。
+
+<!--![Alt text]({{ _imgurl }}/stopit.jpg)-->
+{% include img name="stopit.jpg" %}
+ 
+
+修改后就需要重启了，重启完后就新的标签页就还原成原样了！ 也就可以继续向原先一样使用了~
+
+
+ 
+
+**参考资料：**
+>http://www.williamlong.info/blog/archives/1540.html
+http://www.newhua.com/2013/0925/233622.shtml
+http://www.cnbeta.com/articles/249596.htm
+http://www.baidu.com/s?rtt=2&tn=baiduwb&wd=chrome%20%E6%A0%87%E7%AD%BE%E9%A1%B5 百度微博搜索~

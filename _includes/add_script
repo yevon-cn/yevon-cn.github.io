@@ -1,0 +1,36 @@
+{% comment %}
+	 {% include add_script css=page.css script=page.script %}用于导入yaml头部定义的css、script中定义的内部引用脚步
+	 {% include add_script external_css=page.external_css external_script=page.external_script %}用于导入yaml头部定义的css、script中定义的外部引用脚步
+{% endcomment %}
+{% if include.css_str %}{% assign _css_str = include.css_str|split:"," %}
+    {% for css in _css_str %}<link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/css/{{ css }}.css" />{% endfor %}
+    {% assign _css_str = nil %}
+{% endif %}
+{% if include.script_str %}{% assign _script_str = include.script_str|split:"," %}
+    {% for script in _script_str %}<script src="{{ site.url.bpath }}{{ site.url.apath }}/js/{{ script }}.js"></script>{% endfor %}
+    {% assign _script_str = nil %}
+{% endif %}
+{% if include.external_h_css %}
+    {% for css in include.external_h_css %}<link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/css/{{ css }}.css" />{% endfor %}
+{% endif %}
+{% if include.external_h_script %}
+    {% for script in include.external_h_script %}<script src="{{ site.url.bpath }}{{ site.url.apath }}/js/{{ script }}.js"></script>{% endfor %}
+{% endif %}
+{% if include.external_f_css %}
+    {% for css in include.external_f_css %}<link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/css/{{ css }}.css" />{% endfor %}
+{% endif %}
+{% if include.external_f_script %}
+    {% for script in include.external_f_script %}<script src="{{ site.url.bpath }}{{ site.url.apath }}/js/{{ script }}.js"></script>{% endfor %}
+{% endif %}
+{% if include.h_css %}
+    {% for css in include.h_css %}<link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/css/{{ css }}.css" />{% endfor %}
+{% endif %}
+{% if include.h_script %}
+    {% for script in include.h_script %}<script src="{{ site.url.bpath }}{{ site.url.apath }}/js/{{ script }}.js"></script>{% endfor %}
+{% endif %}
+{% if include.f_css %}
+    {% for css in include.f_css %}<link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/css/{{ css }}.css" />{% endfor %}
+{% endif %}
+{% if include.f_script %}
+    {% for script in include.f_script %}<script src="{{ site.url.bpath }}{{ site.url.apath }}/js/{{ script }}.js"></script>{% endfor %}
+{% endif %}

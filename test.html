@@ -1,0 +1,30 @@
+---
+layout: base
+title: just for test
+desc: 本地测试文件
+arr:
+- test1
+- test2
+arr2:
+- test3
+- test4
+---
+{{ "123,321"|split:","|size }}
+{% assign test = "123,321"|split:","|size %}
+{{test}}
+{{ assign page.aaa = "123"}}
+{{ page.desc | append: "test" }}
+<br>
+
+{{ page | map:"desc" }}
+<br>
+{{ page.arr | join: "gewe" | append: "fae" }}
+<br>
+{{ page.arr }}
+
+<br>
+
+{{ page }}
+
+<br>
+{{page.path}}
