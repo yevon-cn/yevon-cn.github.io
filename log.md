@@ -27,3 +27,17 @@ desc: 日志记录
 
 **11-11**
 添加markdown对table的支持，感谢[Markdown 之使用表格](http://havee.me/internet/2013-10/use-table-with-redcarpet-and-markdown-in-jekyll.html)
+
+**11-12**
+add basic disqus comment in post{% comment %}加载的效果及显示需要完善{% endcomment %}
+
+**11-13**
+首页分页{% comment %}待完善{% endcomment %}
+整理disqus代码
+
+**xxx***
+设计dark主题
+404页面
+
+**11-21**
+表格、代码 样式完善

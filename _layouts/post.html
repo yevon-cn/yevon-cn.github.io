@@ -1,6 +1,7 @@
 ---
 layout: page
 desc: 文章模板
+commentIdentifier: _post
 ---
 <div class="lf_post">
 	<h1 class="lf_post_title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
@@ -11,5 +12,6 @@ desc: 文章模板
 	<div class="lf_content lf_markdown">
       {{ content }}
 	</div>	
+	{% include comment/disqus %}
 </div>
 

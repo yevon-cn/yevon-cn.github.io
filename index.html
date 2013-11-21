@@ -3,4 +3,31 @@ layout: page
 title: Leafer
 width: 600px
 ---
-{% include posts _posts = site.posts %}
+{% comment %}{% include posts _posts = site.posts %}{% endcomment %}
+<div class="lf_index">
+	{% include posts _posts = paginator.posts %}
+	{% if paginator.total_pages > 1 %}
+	<div class="lf_pagination">
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path | prepend: site.url.bpath | replace:'index.html', '' }}" class="lf_page_back"></a>
+		{% else %}
+			<a class="lf_page_back_d"></a>
+		{% endif %}
+	  {% for page in (1..paginator.total_pages) %}
+	    {% if page == paginator.page %}
+	      <b class="lf_page_current">{{ page }}</b>
+	    {% elsif page == 1 %}
+	      <a class="lf_page_link" href="{{ '/' | prepend: site.url.bpath }}">{{ page }}</a>
+	    {% else %}{% assign _page = page | prepend: '' %}
+	      <a class="lf_page_link" href="{{ site.paginate_path | prepend: site.url.bpath | replace:':num', _page }}">{{ page }}</a>
+	    {% endif %}
+	  {% endfor %}
+	  {% if paginator.next_page %}
+	    <a href="{{ paginator.next_page_path | prepend: site.url.bpath }}" class="lf_page_forward"></a>
+	  {% else %}
+	  	<a class="lf_page_forward_d"></a>
+	  {% endif %}
+
+	</div>
+	{% endif %}
+</div>

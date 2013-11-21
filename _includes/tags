@@ -2,9 +2,9 @@
 	<ul class="lf_post_tags">
 	{% for tag in include._tags %}
 		{% if tag[0] %}
-		<li><a href="{{ site.bpath }}{{ site.nav_urls['Tags']}}#{{ tag[0] }}-ref">{{ tag[0] }}<span class="lf_post_nums">{{ tag[1].size }}</span></a></li>
+		<li><a href="{{ site.bpath }}{{ site.nav_urls['Tag']}}#{{ tag[0] }}-ref">{{ tag[0] }}<span class="lf_post_nums">{{ tag[1].size }}</span></a></li>
 		{% else %}
-		<li><a href="{{ site.bpath }}{{ site.nav_urls['Tags']}}#{{ tag }}-ref">{{tag}}<span class="lf_post_nums">{{ site.tags[tag].size }}</span></a></li>
+		<li><a href="{{ site.bpath }}{{ site.nav_urls['Tag']}}#{{ tag }}-ref">{{tag}}<span class="lf_post_nums">{{ site.tags[tag].size }}</span></a></li>
 		{% endif %}
 	{% endfor %}
 	</ul>

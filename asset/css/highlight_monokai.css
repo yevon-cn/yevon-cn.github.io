@@ -1,14 +1,12 @@
 /**
 	copy from http://pygments.org/demo/89417/?style=monokai
 **/
-
-
-
 div.highlight {
     margin-top: 15px;
     margin-bottom: 10px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+	border: 1px dashed #00a977;
+	border-left-width: 3px;
+	border-left-style: solid;
 }
 
 div.highlight pre {
@@ -17,12 +15,6 @@ div.highlight pre {
     padding: 10px;
     border: none;
     overflow: auto;
-
-	/*background-color: #f0f0f0;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	padding: 5px;*/
-	font-size: 13px;
 	font-family: Deja Vu Sans Mono, Droid Sans Mono, Bitstream Vera Sans Mono, "Microsoft YaHei", "微软雅黑", monospace;
 }
 
@@ -31,6 +23,13 @@ div.highlight code{
 	background-color: transparent;
 	border: none;
 	padding: 0;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+div.highlight .lineno {
+	display: inline-block;
+	border-right: 1px solid gray;
+	padding-right: 4px;
 }
 
 div.highlight .hll { background-color: #49483e }

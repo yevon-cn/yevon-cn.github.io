@@ -113,7 +113,6 @@ frameborder="0" />
 很明显，票价查询页面上用的是framename这类型的值，起初在看该页面中的iframe标签属性是还让人有点迷糊，因为这里给iframe加了相同的id和name，这是一种习惯，但也让人疑惑target中放入的到底是id还是name？
 
 以下是我的测试代码：
-
 1）主页面：
 {% highlight html linenos %}
 <!doctype html>

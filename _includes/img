@@ -1,1 +1,5 @@
-<div class="lf_img_sec"><a class="lf_popup_img" href="{{ site.url.pipath }}/{{ page.date | date: '%Y/%m' }}/{{ page.id | split: '/' | last }}/{{ include.name }}"><img src="{{ site.url.pipath }}/{{ page.date | date: '%Y/%m' }}/{{ page.id | split: '/' | last }}/{{ include.name }}" style="max-width:400px;max-height:400px;" /></a></div>
+<div class="lf_img_sec">
+	<a class="lf_img_link" href="{{ site.url.pipath }}{{ page.id }}/{{ include.name }}">
+		<img class="lf_img_min" src="{{ site.url.pipath }}{{ page.id }}/{{ include.name }}" />
+	</a>
+</div>

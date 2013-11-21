@@ -10,17 +10,18 @@ desc: 基页面框架模板
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.LF.name }}{% endif %}</title>
         <!-- 让宽度适应设备宽度 -->
         <meta name="viewport" content="width=device-width">
-        <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/jquery-1.10.2.min.js"></script>
+        <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{{ site.url.bpath }}{{ site.url.apath }}/css/highlight_monokai.css">
         {% comment %}{% include add_script h_css=page.h_css h_script=page.h_script script_str="jquery-1.3.2.min" external_h_css=page.external_h_css external_h_script=page.external_h_script %}{% endcomment %}
     {% if page.imgZoom %}
+      {% if site.img.imgZoomType == 'magnific-popup' %}
         <!-- Magnific Popup core CSS file -->
         <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/magnific-popup/magnific-popup.css"> 
         <!-- Magnific Popup core JS file -->
         <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/magnific-popup/jquery.magnific-popup.js"></script> 
         <script type="text/javascript">
         $(document).ready(function(){
-            $('.lf_popup_img').magnificPopup({
+            $('.lf_img_link').magnificPopup({
               type: 'image',
               gallery:{
                 enabled:false
@@ -45,8 +46,34 @@ desc: 基页面框架模板
             });
         });
         </script>
+      {% elsif site.img.imgZoomType == 'fancybox' %}
+         <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/jquery.fancybox.css" type="text/css" media="screen" />
+         <script type="text/javascript" src="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+         <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+         <script type="text/javascript" src="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+          <script>
+              $(document).ready(function() {
+                  $('.lf_img_link').fancybox({
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    fitToView: true,
+                    autoCenter: true,
+                    autoSize: true,
+                    padding: 0,
+                    closeBtn: false,
+                    closeClick: false,
+                    helpers: {
+                      buttons: {
+                        position: 'bottom',
+                        tpl: '<div id="fancybox-buttons"><ul style="width:74px;"><li><a class="btnToggle" title="Toggle size" href="javascript:;"></a></li><li><a class="btnClose" title="Close" href="javascript:;"></a></li></ul></div>'
+                      }
+                    }
+                  });
+              });
+          </script>
+      {% endif %}
     {% endif %}
-         <link rel="stylesheet" href="{{ site.url.apath }}{{ site.url.theme }}/main.css" />
+         <link rel="stylesheet" href="{{ site.url.apath }}{{ site.url.theme }}/css/main.css" />
     </head>
     <body>
         <div class="lf_site">
