@@ -1,0 +1,478 @@
+/* >> base */
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track { /*滚动条轨道*/
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color: rgba(100,100,100,0.4);
+}
+::-webkit-scrollbar-thumb { /*滚动条*/
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: rgba(0,169,119,0.7); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5),0 0 5px rgba(0,169,119,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4),0 0 5px rgba(0,169,119,0.5); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,169,119,0.9); 
+    box-shadow: 0 0 8px rgba(0,169,119,0.8); 
+    -webkit-box-shadow: 0 0 8px rgba(0,169,119,0.8); 
+}
+::-webkit-scrollbar-thumb:window-inactive {/*滚动条失去焦点情况*/
+    background: rgba(205,205,205,0.3); 
+}
+::-webkit-scrollbar-corner { /*控制横竖滚动条的接触角落*/
+    background-color: rgba(0,0,0,0.8);
+}
+::-webkit-resizer { /*控制可resize的corner*/
+
+}
+html, body{
+    font-family:"Microsoft YaHei", "微软雅黑", Tahoma, Verdana, SimSun, "宋体", Heiti, "黑体", Helvetica, Arial, sans-serif;
+    background-color: #292927;
+    min-height: 100%;
+}
+::selection {
+    background-color: #00a977;
+    background-color: rgba(0,169,119,0.5);
+    color: #ddd;
+}
+.lf_site {
+    min-height: 100%;
+}
+.lf_header, .lf_main, .lf_footer {
+    margin: auto;
+    width: 86%;
+    padding: 0 30px;
+    min-width: 600px;
+    max-width: 1000px;
+}
+.lf_footer {
+    padding: 15px 0;
+    margin: auto;
+    font-size: 12px;
+}
+.lf_header {
+    /*border-bottom: 1px dotted #5A7E69;*/
+    margin: auto;
+}
+.lf_footer {
+    text-align: center;
+    vertical-align: top;
+    /*border-top: 1px dotted #781D1C;*/
+    color: #b59a85;
+}
+.lf_main {
+    margin-top: 10px;
+}
+/* << base */
+
+/* >> 导航栏 */
+.lf_nav {
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+}
+.lf_nav li {
+    display: inline-block;
+}
+.lf_nav li h1 {
+    padding: 10px 10px 10px 0;
+    font-size: 25px;
+}
+.lf_nav li h1 a {
+    text-decoration: none;
+    color: #CAB878;
+}
+.lf_nav li h3 a {
+    font-size: 18px;
+    display: block;
+    color: #C7B394;
+    text-decoration: none;
+    padding: 18px 10px 10px;
+    transition: all 0.5s ease-in;
+}
+.lf_nav li h3 a:hover {
+    background-color: #6B5C45;
+}
+.lf_nav li h3 a.choose {
+    background-color: #54482C;
+    color: #799095;
+}
+/* << 导航栏 */
+
+/* >>index */
+.lf_pagination {
+    text-align: center;
+    padding: 10px;
+}
+.lf_pagination .lf_page_link {
+    color: #A56D3E;
+    margin: auto 6px;
+    padding: 4px;
+    text-decoration: none;
+    transition: color 0.3s ease-in;
+}
+.lf_pagination .lf_page_current {
+    margin: auto 6px;
+    color: #00a977;
+    border-bottom: 2px solid #00a977;
+    padding: 4px;
+}
+.lf_pagination .lf_page_link:hover {
+    color: #e3904a;
+    border-bottom: 2px solid #e3904a;
+}
+.lf_page_forward, .lf_page_back, .lf_page_forward_d, .lf_page_back_d {
+    display: inline-block;
+    width: 32px;
+    height: 29px;
+    vertical-align: middle;
+    opacity: 0.6;
+    transition: all 0.3s ease-in;
+}
+.lf_page_forward:hover, .lf_page_back:hover {
+    opacity: 0.9;
+}
+.lf_page_forward {
+    background: url(../img/i_forward_l.png);
+}
+.lf_page_back {
+    background: url(../img/i_back_l.png);
+}
+.lf_page_forward_d {
+    background: url(../img/i_forward_d.png);
+}
+.lf_page_back_d {
+    background: url(../img/i_back_d.png);
+}
+
+.lf_index {
+    max-width: 600px;
+    margin: auto;
+}
+/* <<index */
+
+/* >> comment Metrize_Icons.png*/
+.lf_comment{
+   margin:20px auto 10px;
+}
+.lf_comment_control {
+    text-align:center;
+    padding: 10px 0;
+}
+.lf_open_comment{
+    background: url(../img/i_comment_l.png) 0px 0px no-repeat;
+    height: 32px;
+    width: 31px;
+    display: inline-block;
+    cursor:pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease-in;
+}
+.lf_open_comment:hover {
+    opacity: 1;
+}
+.lf_open_comment_d{
+    background: url(../img/i_comment_d.png) 0px 0px no-repeat;
+    height: 32px;
+    width: 31px;
+    display: inline-block;
+    cursor:pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease-in;
+}
+.lf_open_comment_d:hover {
+    opacity: 1;
+}
+
+/* end of page */
+
+/* >> postList */
+.lf_posts {
+    list-style: none;
+}
+.lf_posts li {
+    margin: 8px auto;
+    /*border-bottom: 1px dashed #72714E; dotted dashed*/
+    line-height: 30px;
+    overflow: hidden;
+}
+.lf_posts li:hover {
+   /*border-bottom: 1px dashed #DBA360;*/
+}
+.lf_posts li:hover a{
+    position: absolute;
+    overflow: visible;
+}
+.lf_posts li span {
+    color: #a39570;
+    float: left;
+    margin-right: 10px;
+    width: 130px;
+    text-align: center;
+}
+.lf_posts li a {
+    color: #c6c6c6;/*#c2c2c2 #cfcfcf*/
+    text-decoration: none;
+    float: left;
+    max-width: 460px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease-in;
+}
+/*a:hover不能有空格？*/
+.lf_posts li a:hover { 
+    color: #d98944;
+    /*text-decoration: underline;
+    margin-left: -16px;*/
+    -webkit-animation: shake 0.25s ease 0.25s;
+    -moz-animation: shake 0.25s ease 0.25s;
+    animation: shake 0.25s ease 0.25s;
+}
+/* << postList */
+
+/* >> tag */
+.lf_tag_page {
+    max-width: 600px;
+    margin: auto;
+}
+.lf_tags_div{
+    text-align: center;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.lf_post_tags {
+    list-style: none;
+    font-size: 0;
+}
+.lf_post_tags li .lf_post_nums{
+    vertical-align: super;
+    font-size: 0.8em;
+}
+.lf_post_tags li {
+    display: inline-block;
+    margin: 0px 5px 5px 0;
+    color: #B4C3C5;
+    font-size: 12px;
+    line-height: 24px;
+}
+.lf_post_tags li:hover a {
+    background-color: #AD9165;
+    color: #eee;
+}
+.lf_post_tags li a {
+    color:  #000; /* #B4C3C5; */
+    background-color: #B7BB72;/* #796C51; */
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.5s ease-in;
+    font-weight: bold;
+}
+
+.lf_tag_posts h2 {
+    text-align: left;
+    margin-top: 10px;
+    color: #cdcdcd;
+}
+/* << tag */
+
+/* >> archive */
+.lf_archive_page {
+    max-width: 600px;
+    margin: auto;
+}
+.lf_archive_page h2 {
+    text-align: left;
+    color: #cdcdcd;
+}
+/* << archive */
+
+/* >> post */
+.lf_post{
+    
+}
+.lf_post_title {
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.4em;
+}
+.lf_post_title a {
+    text-decoration: none;
+    color: #e3904a;
+}
+.lf_post_title a:hover {
+    /*text-decoration: underline;*/
+}
+.lf_post .lf_meta {
+    text-align: center;
+    margin-bottom: 2.2em;
+}
+.lf_post .lf_meta .lf_date_author {
+    color: #665848;
+    font-size: 12px;
+}
+/* markdown style */
+.lf_markdown br {
+    line-height: 2.2em;
+}
+.lf_markdown p {
+    margin: 2.2em 0;
+    line-height: 180%;
+} 
+.lf_markdown {
+     color: #c6c6c6;
+}
+.lf_markdown a {
+    color: #A56D3E;
+    padding: 0 3px;
+    text-decoration: none;
+    transition: all 0.5s ease-in;
+}
+.lf_markdown a:hover {
+    color: #e3904a;
+    text-decoration: underline;
+}
+.lf_markdown blockquote {
+    background-color: #3b3b3b;
+    border-left: 5px solid #5b5b5b;
+    margin: 16px auto;
+    padding: 5px 25px;
+}
+.lf_markdown blockquote p {
+    margin: 8px 0;
+}
+.lf_markdown table {
+    border-collapse: collapse;
+    margin: 10px auto;
+}
+.lf_markdown table td, .lf_markdown table th{
+    border: 1px solid black;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.lf_markdown table td {
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.lf_markdown table th {
+    border: 1px solid rgba(255,255,255,0.3);
+    border-top: 0px none;
+    border-bottom-width: 2px;
+    padding: 8px;
+}
+.lf_markdown table thead tr {
+    background-color: rgba(249,249,249,0.3);
+}
+.lf_markdown img {
+    /*display: block;
+    margin: 8px auto;
+    max-width: 75%;*/
+}
+.lf_img_sec {
+    font-size: 0;
+}
+img.lf_img_min {
+    max-width: 400px;
+    max-height: 400px;
+}
+/* << post */
+
+
+.lf_img_sec a.lf_img_link {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    /*border: 1px solid #ddd;*/
+    border: 6px solid #776154;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+}
+.lf_img_sec a.lf_img_link:hover {
+  
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 8px 8px 15px rgba(0,0, 0, 0.4);
+}
+.lf_img_sec a.lf_img_link img {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.lf_img_sec {
+    text-align: center;
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out; 
+  -moz-transition: all 0.3s ease-out; 
+  -o-transition: all 0.3s ease-out; 
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+/** end of popup **/
+
+/* << 404 */
+.lf_404_page {
+    text-align:center;
+    /*
+    position:absolute;
+    left:50%;
+    margin-left:-202px;*/
+    width: 404px;
+    margin: auto;
+    margin-top:20px;
+}
+.lf_all_freeze {
+    background: url(../img/we_are_all_freeze.jpg);
+    width: 367px;
+    height: 340px;
+    margin: auto;
+    border-bottom: 2px solid #00a977;
+}
+.lf_404_title {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+.lf_404_txt {
+    color: rgb(255, 152, 152);
+    line-height: 40px;
+    font-weight: bold;
+}

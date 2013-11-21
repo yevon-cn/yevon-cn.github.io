@@ -1,0 +1,39 @@
+{% if page.commentIdentifier and page.disableComment != true %}
+<div class="lf_comment" >
+	<div class="lf_comment_control">
+		<span  id="_disqusShowComment" class="lf_open_comment" onclick="_toggleDisqusComment();"></span>
+	</div>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		function _toggleDisqusComment(isFirst){
+			var isShow = (function(a){return a;})({{ page.showComment }});
+			 var _toggleBtn = document.getElementById("_disqusShowComment");
+			var _disqus = function(){
+			    var disqus_shortname = 'leafer';
+			    var disqus_identifier = '{% if page.commentIdentifier == "_post" and page.id %}{{ page.id }}{% else %}{{ page.commentIdentifier }}{% endif %}';
+
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			};
+			if(isShow){
+				_toggleBtn.style.display = 'none';
+			    _disqus();
+		    }else if(!isFirst){
+				 var _className = _toggleBtn.className;
+				 if('lf_open_comment_d'==_className){
+				 	document.getElementById("disqus_thread").innerHTML = '';
+				 	_toggleBtn.className = 'lf_open_comment';
+				 }else{
+				 	_toggleBtn.className = 'lf_open_comment_d';
+				 	_disqus();
+			    }
+		    }
+	    };
+	    _toggleDisqusComment(true);
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+{% endif %}
