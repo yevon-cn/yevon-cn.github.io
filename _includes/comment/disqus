@@ -11,6 +11,9 @@
 			var _disqus = function(){
 			    var disqus_shortname = 'leafer';
 			    var disqus_identifier = '{% if page.commentIdentifier == "_post" and page.id %}{{ page.id }}{% else %}{{ page.commentIdentifier }}{% endif %}';
+			    {% if site.domain %}
+    			 var disqus_url = 'http://{{ site.domain }}{{ page.url }}';
+    			{% endif %}
 
 			    (function() {
 			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
