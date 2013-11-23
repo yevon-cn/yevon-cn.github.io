@@ -166,6 +166,23 @@ html, body{
 .lf_comment{
    margin:20px auto 10px;
 }
+.lf_comment .lf_comment_count {
+    padding: 5px;
+    background-color: #00a977;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #ddd;
+    opacity: 0.7;
+    cursor: pointer;
+    display: inline-block;
+}
+.lf_comment .lf_comment_count:hover {
+    opacity: 0.9;
+}
+.lf_comment .lf_comment_count a {
+    text-decoration: none;
+    color: #ddd;
+}
 .lf_comment_control {
     text-align:center;
     padding: 10px 0;

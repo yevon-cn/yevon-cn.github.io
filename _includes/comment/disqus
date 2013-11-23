@@ -1,38 +1,43 @@
 {% if page.commentIdentifier and page.disableComment != true %}
 <div class="lf_comment" >
 	<div class="lf_comment_control">
-		<span  id="_disqusShowComment" class="lf_open_comment" onclick="_toggleDisqusComment();"></span>
+	{% capture _identifier%}{% if page.commentIdentifier == "_post" and page.id %}{{ page.id }}{% elsif page.commentIdentifier %}{{ page.commentIdentifier }}{% else %}error_comment{% endif %}{% endcapture %}
+	<span id="_disqusShowComment" class="lf_comment_count" onclick="_toggleDisqusComment();"><a  href="{{ site.url.bpath }}{{ page.url }}#_disqusShowComment">Comment </a>(<a href="{{ site.url.bpath }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ _identifier }}">0</a>)</span>
 	</div>
-	<div id="disqus_thread"></div>
+	<div id="disqus_thread" style="display:none;"></div>
 	<script type="text/javascript">
 		function _toggleDisqusComment(isFirst){
 			var isShow = (function(a){return a;})({{ page.showComment }});
-			 var _toggleBtn = document.getElementById("_disqusShowComment");
+			var _toggleBtn = document.getElementById("_disqusShowComment");
+			var _dsqusThread = document.getElementById("disqus_thread");
 			var _disqus = function(){
-			    var disqus_shortname = 'leafer';
-			    var disqus_identifier = '{% if page.commentIdentifier == "_post" and page.id %}{{ page.id }}{% else %}{{ page.commentIdentifier }}{% endif %}';
-			    {% if site.domain %}
-    			 var disqus_url = 'http://{{ site.domain }}{{ page.url }}';
-    			{% endif %}
-
-			    (function() {
+			    (function(win) {
+				    win.disqus_shortname = 'leafer';
+				    win.disqus_identifier = '{{ _identifier }}';
+				    {% if site.domain %}
+	    			win.disqus_url = 'http://{{ site.domain }}{{ page.url }}';
+	    			{% endif %}
+	    			win.disqus_config = function () { 
+	    			  var _language = navigator.browserlanguage||navigator.language||"zh-cn";
+					  this.language = ( _language.toLowerCase() == "zh-cn" ? "zh" : "en" );
+					};
 			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			    })();
+
+					(function () {
+						var s = document.createElement('script'); s.async = true;
+						s.type = 'text/javascript';
+						s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					}());
+			    })(window);
 			};
-			if(isShow){
-				_toggleBtn.style.display = 'none';
-			    _disqus();
+			if(isFirst){
+				_disqus();
+				_dsqusThread.style.display = isShow ? '' : _dsqusThread.style.display ;
 		    }else if(!isFirst){
-				 var _className = _toggleBtn.className;
-				 if('lf_open_comment_d'==_className){
-				 	document.getElementById("disqus_thread").innerHTML = '';
-				 	_toggleBtn.className = 'lf_open_comment';
-				 }else{
-				 	_toggleBtn.className = 'lf_open_comment_d';
-				 	_disqus();
-			    }
+		    	 _dsqusThread.style.display = _dsqusThread.style.display == 'none' ? '' : 'none';
 		    }
 	    };
 	    _toggleDisqusComment(true);
