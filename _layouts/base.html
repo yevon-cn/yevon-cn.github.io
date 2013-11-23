@@ -12,7 +12,6 @@ desc: 基页面框架模板
         <meta name="viewport" content="width=device-width">
         <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{{ site.url.bpath }}{{ site.url.apath }}/css/highlight_monokai.css">
-        {% comment %}{% include add_script h_css=page.h_css h_script=page.h_script script_str="jquery-1.3.2.min" external_h_css=page.external_h_css external_h_script=page.external_h_script %}{% endcomment %}
     {% if page.imgZoom %}
       {% if site.img.imgZoomType == 'magnific-popup' %}
         <!-- Magnific Popup core CSS file -->
@@ -80,8 +79,6 @@ desc: 基页面框架模板
             {{ content }}
         </div>
         <div class="_lf_script">
-             {% comment %}
-        {% include add_scr{% include add_script f_css=page.f_css f_script=page.f_script str="test1,test2" external_f_css=page.external_f_css external_f_script=page.external_f_script %}{% endcomment %}
         </div>
     </body>
 </html>
