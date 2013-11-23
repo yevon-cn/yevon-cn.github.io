@@ -4,7 +4,7 @@ title:  "Test no title!"
 date:   2013-11-12 22:15:32
 categories: jekyll update
 no_site_msg: true
-h_css: highlight_monokai
+published: false
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
