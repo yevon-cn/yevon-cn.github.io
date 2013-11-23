@@ -9,6 +9,7 @@ arr2:
 - test3
 - test4
 ---
+{% raw %}
 {{ "123,321"|split:","|size }}
 {% assign test = "123,321"|split:","|size %}
 {{test}}
@@ -28,3 +29,4 @@ arr2:
 
 <br>
 {{page.path}}
+{% endraw %}
