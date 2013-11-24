@@ -64,7 +64,7 @@ redcarpet:
 pygments: true
 
 #生成静态内容时滤去下列不必要的文件
-exclude: ["Gemfile", "Gemfile.lock","README.md"]
+exclude: ["Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]
 
 
 #生成的页面URL形式
