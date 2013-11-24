@@ -1,0 +1,11 @@
+{% unless page.unAnalysis %}
+  {% for _analysis in site.data.analysis %}
+  	{% if _analysis.using %}{% assign _temp = _analysis.name | prepend: 'analysis/' %}
+  	  {% comment %} bug of include var 
+      	{% include {{_temp}} cfg = _analysis %}{% assign _temp = nil %}
+      {% endcomment %}
+      {% if _analysis.name == "baidu" %} {% include analysis/baidu cfg = _analysis %}{% endif %}
+      {% if _analysis.name == "google" %} {% include analysis/google cfg = _analysis %}{% endif %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
