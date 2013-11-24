@@ -17,7 +17,7 @@ tags:
 很遗憾的是，目前我还没去体验过那个高速的感觉，但是这个绝对是真实可用的~
 
 **用法大概如下：**
-{% highlight bash %}
+{% highlight bash linenos %}
 # 移除默认的源
 $ gem sources --remove https://rubygems.org/
 # 添加新的源

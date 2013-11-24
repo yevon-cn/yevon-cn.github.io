@@ -30,6 +30,7 @@ div.highlight .lineno {
 	display: inline-block;
 	border-right: 1px solid gray;
 	padding-right: 4px;
+	display: none;
 }
 
 div.highlight .hll { background-color: #49483e }
