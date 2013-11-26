@@ -1,6 +1,7 @@
 - name: baidu
   identifier: a59e6448dfb828503b6d5c2eefd523e2
   using: true #是否开启
+  syn: false #是否同步方式
 
 - name: google
   identifier: UA-45985706-1
