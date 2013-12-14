@@ -6,6 +6,7 @@ author: Leafer
 domain: leafer.tk
 encoding: utf-8
 
+layoutTheme: origin
 
 ### URL配置
 url:
@@ -53,12 +54,22 @@ LF:
 markdown: redcarpet
 redcarpet:
   extensions:
+    - underline # _用于生成下划线
+    - superscript # ^用于生成上标
+    #- space_after_headers # ##后面必须有空格
+    #- lax_spacing 是否需要空行（情况特殊）
+    - strikethrough #  ~~删除线
+    - disable_indented_code_blocks #禁用四个空格生成代码块
+    #- autolink #自动生成超链接
+    #- fenced_code_blocks # ~~~html或```html 生成代码块 jekyll中默认true
+    - tables # 生成表格
+    - no_intra_emphasis # 禁用单词内的下划线解析
+    ## V3才支持的extensions：footnotes, highlight, quote
+    #----# render_options：[:filter_html, :no_images, :no_links, :no_styles, :safe_links_only, :with_toc_data, :hard_wrap, :prettify, :xhtml]
     - hard_wrap #硬回车
-    - no_intra_emphasis
-    - autolink #自动生成链接
-    - strikethrough
-    - fenced_code_blocks #~~~代码块
-    - tables #表格支持
+    #--------# jekyll添加的extensions选项
+    #- smart #属于redcarpet，但不是extensions，http://daringfireball.net/projects/smartypants/
+
 
 #开启语法高亮插件
 pygments: true
