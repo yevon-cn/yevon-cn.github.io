@@ -2,23 +2,4 @@
 layout: base
 desc: 基本页面模板
 ---
-{% unless page.no_header or page.no_site_msg %}
-<div class="lf_header">
-    <ul class="lf_nav">
-        <li><h1><a href="/">{{ site.LF.name }}</a></h1></li>
- 		{% for nav_url in site.nav_urls %}
- 		<li><h3><a href="{{ site.bpath }}{{ nav_url[1] }}" {% if page.url == nav_url[1] %}class="choose"{% endif %}>{{ nav_url[0] }}</a></h3></li>
- 		{% endfor %}
-    </ul>
-    
-</div>
-{% endunless %}
-
-<div class="lf_main">
-    {{ content }}
-</div>
-{% unless page.no_footer or page.no_site_msg %}
-<div class="lf_footer">
-    ©2013 Powered by Jekyll.
-</div>
-{% endunless %}
+{% include theme/script layout='page.html' %}

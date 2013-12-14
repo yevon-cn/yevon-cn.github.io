@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 尝试以Chrome进行渲染，不行则以IE最高版本进行渲染 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.LF.name }}{% endif %}</title>
+        <!-- 让宽度适应设备宽度 -->
+        <meta name="viewport" content="width=device-width">
+        <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ site.url.bpath }}{{ site.url.apath }}/css/highlight_monokai.css">
+    {% if page.imgZoom %}
+      {% if site.img.imgZoomType == 'magnific-popup' %}
+        <!-- Magnific Popup core CSS file -->
+        <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/magnific-popup/magnific-popup.css"> 
+        <!-- Magnific Popup core JS file -->
+        <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/magnific-popup/jquery.magnific-popup.js"></script> 
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.lf_img_link').magnificPopup({
+              type: 'image',
+              gallery:{
+                enabled:false
+              },
+              disableOn: function() {
+                  return true; //是否禁用
+              },
+              mainClass: "mfp-with-zoom",
+              fixedContentPos: true,
+              zoom: {
+                 enabled: true, easing: 'ease-in-out',
+                 duration: 300 
+
+              },midClick: true,closeOnContentClick:true,showCloseBtn:false,closeBtnInside:true,
+              image: {
+                verticalFit: true,
+            tError: '图片加载错误！',
+            titleSrc: function(item) {
+              return '{{ page.title | replace: "'","\'" }}';
+            }
+          }
+            });
+        });
+        </script>
+      {% elsif site.img.imgZoomType == 'fancybox' %}
+         <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/jquery.fancybox.css" type="text/css" media="screen" />
+         <script type="text/javascript" src="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+         <link rel="stylesheet" href="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+         <script type="text/javascript" src="{{ site.url.bpath }}{{ site.url.apath }}/js/fancybox/2.1.5/helpers/jquery.fancybox-buttons.js"></script>
+          <script>
+              $(document).ready(function() {
+                  $('.lf_img_link').fancybox({
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic',
+                    fitToView: true,
+                    autoCenter: true,
+                    autoSize: true,
+                    padding: 0,
+                    closeBtn: false,
+                    closeClick: false,
+                    helpers: {
+                      buttons: {
+                        position: 'bottom',
+                        tpl: '<div id="fancybox-buttons"><ul style="width:74px;"><li><a class="btnToggle" title="Toggle size" href="javascript:;"></a></li><li><a class="btnClose" title="Close" href="javascript:;"></a></li></ul></div>'
+                      }
+                    }
+                  });
+              });
+          </script>
+      {% endif %}
+    {% endif %}
+         <link rel="stylesheet" href="{{ site.url.apath }}{{ site.url.theme }}/css/main.css" />
+    </head>
+    <body>
+        <div class="lf_site">
+            {{ content }}
+        </div>
+        <div class="_lf_script">{% include analysis/script %}</div>
+    </body>
+</html>

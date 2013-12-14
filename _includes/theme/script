@@ -1,0 +1,1 @@
+{% assign _layout = site.layoutTheme | prepend: 'theme/' | append: '/' | append: include.layout %}{% include {{_layout}} %}
