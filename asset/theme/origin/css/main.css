@@ -158,7 +158,7 @@ html, body{
     bottom: 1em;
 }
 .lf_footer, .lf_header {
-    opacity: 0.3;
+    opacity: 0.2;
     transition: opacity 0.2s ease-in;
 }
 .lf_footer:hover, .lf_header:hover {
@@ -287,6 +287,15 @@ html, body{
 .lf_nav li.choose{
     background-color: #54482C;
     color: #799095;
+}
+.lf_nav .lf_nav_img, .lf_nav .lf_nav_img:hover {
+    padding: 0;
+    background: transparent;
+    font-size: 0;
+}
+.lf_nav .lf_nav_img img {
+    max-height: 100%;
+    max-width: 100%;
 }
 /* << 导航栏 */
 /* << base */
