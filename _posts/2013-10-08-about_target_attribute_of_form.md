@@ -21,6 +21,7 @@ tags:
 对于该页面的第一反应是，功能应该可以的，不然大家抢不到票了，不过美观的角度就不怎么样了。
 
 本以为该页面会是用Ajax方式提及获取数据（因点查询后页面并无刷新迹象，且[余票查询]是Ajax请求方式的），于是通过Firebug观察提交的方式及返回的内容，发现是以POST方式的表单提交，而返回的内容居然是如下形式的代码：
+
 {% highlight html linenos %}
 <script>
 parent.document.getElementById("randCode").value="";
@@ -34,15 +35,16 @@ parent.document.getElementById("gridbox2").style.display='none';
 </script>
 {% endhighlight %}
 
-返回的这个信息让人非常不解，一般POST提交都是会“跳转”页面的，而这里返回了似乎是html代码的script标签，内部是含有返回数据的js代码。（代码和数据这两家伙，这么亲密-_-!）
+返回的这个信息让人非常不解，一般`POST`提交都是会“跳转”页面的，而这里返回了似乎是html代码的script标签，内部是含有返回数据的js代码。（代码和数据这两家伙，这么亲密-_-!）
  
  **对此我有两个疑问：**
 1) 表单提交返回了这个代码，但是页面怎么没刷新呢？
 2) 很明显返回的代码起了作用，因为查询结果出现在了页面上，咋回事？
 
-细心的人可能注意到了上面的代码中一个明显的地方（我表示当时我没注意这个-.-），即parent.document字样，这个是在iframe嵌套时，调用父iframe中window的操作，明显这里有蹊跷，当前页面提交后，返回的代码中居然是通过parent.document字样的js代码来操作页面的。
+细心的人可能注意到了上面的代码中一个明显的地方（我表示当时我没注意这个-.-），即`parent.document`字样，这个是在`iframe`嵌套时，调用父`iframe`中`window`的操作，明显这里有蹊跷，当前页面提交后，返回的代码中居然是通过`parent.document`字样的js代码来操作页面的。
 
 另外，页面中表单标签的代码如下：
+
 {% highlight html linenos %}
 <form action="iframeTicketPriceByStation.jsp"
 method="post" name="ticketPriceByStationform"
@@ -51,22 +53,24 @@ target="iframeName1">
 </form>
 {% endhighlight %}
 
-这里的target属性让我感到可疑，特别是搜索target的值“iframeName1”后，在页面中有如下iframe代码，该iframe隐藏了：
+这里的`target`属性让我感到可疑，特别是搜索`target`的值“iframeName1”后，在页面中有如下`iframe`代码，该`iframe`隐藏了：
+
 {% highlight html linenos %}
 <iframe name="iframeName1" id="iframeID1" src="" width="0" height="0"
 frameborder="0" />
 {% endhighlight %}
 
-初步猜测表单提交后返回的页面加载到该iframe中了，对form的target做些调查后便能确定下来了。
+初步猜测表单提交后返回的页面加载到该`iframe`中了，对`form`的`target`做些调查后便能确定下来了。
 
 
- 查询w3school上的介绍：target 属性规定在何处打开 action URL。
+ 查询w3school上的介绍：`target` 属性规定在何处打开 `action URL`。
 
  不过对于该属性的使用上却有些“兼容性”的问题：
->在 HTML 4.01 中，不赞成使用 form 元素的 target 属性；在 XHTML 1.0 Strict DTD 中，不支持该属性。（[链接][html4_target]）
->在 HTML5 中 target 属性不再是被废弃的属性。（[链接][html5_target]）
+>在 HTML 4.01 中，不赞成使用 `form` 元素的 `target` 属性；在 XHTML 1.0 Strict DTD 中，不支持该属性。（[链接][html4_target]）
+>在 HTML5 中 `target` 属性不再是被废弃的属性。（[链接][html5_target]）
 
-通过查看[XHTML 1.0 Strict DTD][xhtml_dtd_strict]对form的定义，已经没有target属性了：
+通过查看[XHTML 1.0 Strict DTD][xhtml_dtd_strict]对`form`的定义，已经没有`target`属性了：
+
 {% highlight dtd linenos %}
 <!ATTLIST form
   %attrs;
@@ -81,6 +85,7 @@ frameborder="0" />
 {% endhighlight %}
 
 但在[XHTML 1.0 Transitional DTD][xhtml_dtd_transitional]中还保留着：
+
 {% highlight dtd linenos %}
 <!ATTLIST form
   %attrs;
@@ -100,7 +105,7 @@ frameborder="0" />
 
 以上介绍已经明了，该属性指定在何处打开表单提交的url，按照我们平时的使用可推测，默认情况是在当前页面。
 
-参考对Target属性的介绍，它可以有如下值，这些值应该是很熟悉的了，涉及到链接的时候，都会有这几个出现：
+参考对`Target`属性的介绍，它可以有如下值，这些值应该是很熟悉的了，涉及到链接的时候，都会有这几个出现：
 
 |值|描述|
 |---|---|
@@ -110,10 +115,11 @@ frameborder="0" />
 |_top|在整个窗口中打开。|
 |framename|在指定的框架中打开。|
 
-很明显，票价查询页面上用的是framename这类型的值，起初在看该页面中的iframe标签属性是还让人有点迷糊，因为这里给iframe加了相同的id和name，这是一种习惯，但也让人疑惑target中放入的到底是id还是name？
+很明显，票价查询页面上用的是`framename`这类型的值，起初在看该页面中的`iframe`标签属性是还让人有点迷糊，因为这里给`iframe`加了相同的`id`和`name`，这是一种习惯，但也让人疑惑`target`中放入的到底是`id`还是`name`？
 
 以下是我的测试代码：
 1）主页面：
+
 {% highlight html linenos %}
 <!doctype html>
 <html>
@@ -138,7 +144,8 @@ frameborder="0" />
 </html>
 {% endhighlight %}	
 
-2）表单提交的页面（虽然可以只写script标签的代码就行了，但总觉得不规范……）：
+2）表单提交的页面（虽然可以只写`script`标签的代码就行了，但总觉得不规范……）：
+
 {% highlight html linenos %}
 <!doctype html>
 <html>
@@ -154,15 +161,11 @@ frameborder="0" />
 </html>
 {% endhighlight %}
 
-**PS:** 当target指定的name不存在时（这个涉及到window.name属性了），那么会新开一个window.name为该name值的窗口。之后的每次提交都会到这个窗口来，如果关闭了此窗口，那么再次提交时还是会新开启窗口的。
+**PS:** 当`target`指定的`name`不存在时（这个涉及到`window.name`属性了），那么会新开一个`window.name`为该`name`值的窗口。之后的每次提交都会到这个窗口来，如果关闭了此窗口，那么再次提交时还是会新开启窗口的。
 
-**PPS:** 关于重复表单提交（点击刷新按钮），似乎对于新开窗口方式，无重复提交现象出现（感觉这种方式就是以POST形式新开窗口-_-）。而针对内嵌的iframe方式，则会有重复表单提交现象（IE8、Firefox如此，但Chrome除外），具体如何我就不进行测试了，这是题外话了，问题无处不在，有新的东西就有新的问题，有兴趣的朋友自己试试。
-
- 
+**PPS:** 关于重复表单提交（点击刷新按钮），似乎对于新开窗口方式，无重复提交现象出现（感觉这种方式就是以`POST`形式新开窗口-_-）。而针对内嵌的`iframe`方式，则会有重复表单提交现象（IE8、Firefox如此，但Chrome除外），具体如何我就不进行测试了，这是题外话了，问题无处不在，有新的东西就有新的问题，有兴趣的朋友自己试试。
 
 最后吐槽下，该[页面][page_cccx]的验证码是js生成的数字，不禁让我回想起去年写过的类似代码，只是这里的代码兼容性真是差呢，也就ie下能运行了。
-
- 
 
 **参考资料：**
 >[为什么铁道部的网站叫12306？](http://zhidao.baidu.com/link?url=ER04KXHiSYmxCZ7ptQCbFYIDIpUFPlcG35xSVHxX-YchSYT4Mi7uU8jeeJsnhbg4ckm_W310ePpa-TC5y6G9Na)

@@ -1,4 +1,4 @@
-{{ include.date | date: "%a, %Y/%m/%d" }}
+<span class="lf_date_week">{{ include.date | date: "%a, " }}</span>{{ include.date | date: "%Y/%m/%d" }}
 {% comment %}
 "%a, %d %b %Y" Wed, 13 Nov 2013
 %a, %Y/%m/%d   Wed, 2013/11/13
