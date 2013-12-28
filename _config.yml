@@ -64,7 +64,7 @@ redcarpet:
     #- autolink #自动生成超链接
     #- fenced_code_blocks # ~~~html或```html 生成代码块 jekyll中默认true
     - tables # 生成表格
-    - no_intra_emphasis # 禁用单词内的下划线解析
+    #- no_intra_emphasis # 禁用单词内的下划线解析
     ## V3才支持的extensions：footnotes, highlight, quote
     #----# render_options：[:filter_html, :no_images, :no_links, :no_styles, :safe_links_only, :with_toc_data, :hard_wrap, :prettify, :xhtml]
     - hard_wrap #硬回车
@@ -83,7 +83,7 @@ exclude: ["Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]
 permalink: /:year/:month/:day/:title.html
 
 #分页设置项
-paginate: 5
+paginate: 15
 paginate_path: /page:num
 
 
