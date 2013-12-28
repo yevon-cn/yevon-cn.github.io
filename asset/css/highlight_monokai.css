@@ -7,6 +7,7 @@ div.highlight {
 	border: 1px dashed #00a977;
 	border-left-width: 3px;
 	border-left-style: solid;
+	letter-spacing: normal;
 }
 
 div.highlight pre {

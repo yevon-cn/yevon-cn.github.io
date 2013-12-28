@@ -129,6 +129,7 @@ html, body{
     font-family:"Microsoft YaHei", "微软雅黑", Tahoma, Verdana, SimSun, "宋体", Heiti, "黑体", Helvetica, Arial, sans-serif;
     background-color: #292927;
     min-height: 100%;
+    letter-spacing: 1px;
 }
 .lf_site {
     min-height: 100%;
@@ -428,6 +429,7 @@ html, body{
     width: 130px;
     text-align: center;
     margin-left: -140px;
+    letter-spacing: normal;
 }
 .lf_posts li a {
     color: #c6c6c6;/*#c2c2c2 #cfcfcf*/
@@ -587,37 +589,45 @@ html, body{
     border-radius: 3px;
     font-style: normal;
 }
+div.highlight {
+    margin: 1.4em auto;
+}
 .lf_markdown h1,.lf_markdown h2,.lf_markdown h3,.lf_markdown h4,.lf_markdown h5,.lf_markdown h6 {
     line-height: 1.8em;
-    margin: 1.6em auto;
-    padding: 6px;
+    margin-top: 1.8em;
+    margin-bottom: 1.2em;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5em 1em;
     border-radius: 5px;
-}
-.lf_markdown h1 {
-    background: #111;
     text-align: center;
+    font-size: 1.2em;
 }
-.lf_markdown h2 {
-    background: #222;
-    text-align: center;
+.lf_markdown h1 + *, .lf_markdown h2 + *, .lf_markdown h3 + *, .lf_markdown h4 + *, .lf_markdown h5 + *, .lf_markdown h6 + * {
+    margin-top: 0em;
 }
-.lf_markdown h3 {
+.lf_markdown h1, .lf_markdown h3, .lf_markdown h5 {
     background: #111;
-    text-align: left;
 }
-.lf_markdown h4 {
+.lf_markdown h2, .lf_markdown h4, .lf_markdown h6 {
     background: #222;
-    text-align: left;
 }
-.lf_markdown h5 {
-    background: #111;
+.lf_markdown h3, .lf_markdown h4 {
     text-align: left;
-    border-bottom: 3px solid #444;
+    font-size: 1.1em;
+    margin-top: 1.6em;
+    margin-bottom: 1em;
 }
-.lf_markdown h6 {
-    background: #222;
+.lf_markdown h5, .lf_markdown h6 {
+    font-size: 1em;
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-top: 0;
     text-align: left;
-    border-bottom: 3px solid #444;
+    padding: 0.3em 0.5em 0;
+    border-bottom: 1px solid #6D883E;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .lf_markdown sup {
     vertical-align: super;
