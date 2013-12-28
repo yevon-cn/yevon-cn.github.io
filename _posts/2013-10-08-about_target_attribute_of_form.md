@@ -2,7 +2,6 @@
 layout: post
 title: "话说Form标签的target属性-----无刷新表单提交"
 date: 2013-10-08 22:10:32
-h_css: highlight_monokai
 tags: 
 - HTML
 - form

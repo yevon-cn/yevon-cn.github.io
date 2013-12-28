@@ -2,7 +2,6 @@
 layout: post
 title: "还没更换RubyGems镜像？"
 date: 2013-10-30 21:33:32
-h_css: highlight_monokai
 tags: 
 - Ruby
 - RubyGems

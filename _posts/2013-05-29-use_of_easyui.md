@@ -2,7 +2,6 @@
 layout: post
 title: "浅谈EasyUI的使用"
 date: 2013-05-29 21:41:32
-h_css: highlight_monokai
 tags: 
 - HTML
 - JavaScript
