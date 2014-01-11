@@ -592,43 +592,6 @@ html, body{
 div.highlight {
     margin: 1.4em auto;
 }
-.lf_markdown h1,.lf_markdown h2,.lf_markdown h3,.lf_markdown h4,.lf_markdown h5,.lf_markdown h6 {
-    line-height: 1.8em;
-    margin-top: 1.8em;
-    margin-bottom: 1.2em;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 1.2em;
-}
-.lf_markdown h1 + *, .lf_markdown h2 + *, .lf_markdown h3 + *, .lf_markdown h4 + *, .lf_markdown h5 + *, .lf_markdown h6 + * {
-    margin-top: 0em;
-}
-.lf_markdown h1, .lf_markdown h3, .lf_markdown h5 {
-    background: #111;
-}
-.lf_markdown h2, .lf_markdown h4, .lf_markdown h6 {
-    background: #222;
-}
-.lf_markdown h3, .lf_markdown h4 {
-    text-align: left;
-    font-size: 1.1em;
-    margin-top: 1.6em;
-    margin-bottom: 1em;
-}
-.lf_markdown h5, .lf_markdown h6 {
-    font-size: 1em;
-    display: inline-block;
-    margin-bottom: 0.5em;
-    margin-top: 0;
-    text-align: left;
-    padding: 0.3em 0.5em 0;
-    border-bottom: 1px solid #6D883E;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
 .lf_markdown sup {
     vertical-align: super;
     font-size: smaller;
@@ -671,6 +634,44 @@ div.highlight {
 }
 .lf_markdown table thead tr {
     background-color: rgba(249,249,249,0.3);
+}
+.lf_markdown h1,.lf_markdown h2,.lf_markdown h3,.lf_markdown h4,.lf_markdown h5,.lf_markdown h6 {
+    line-height: 1.8em;
+    margin-top: 1.8em;
+    margin-bottom: 1.2em;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #eee;
+}
+.lf_markdown h1 + *, .lf_markdown h2 + *, .lf_markdown h3 + *, .lf_markdown h4 + *, .lf_markdown h5 + *, .lf_markdown h6 + * {
+    margin-top: 0em;
+}
+.lf_markdown h1, .lf_markdown h3, .lf_markdown h5 {
+    background: #111;
+}
+.lf_markdown h2, .lf_markdown h4, .lf_markdown h6 {
+    background: #222;
+}
+.lf_markdown h3, .lf_markdown h4 {
+    text-align: left;
+    font-size: 1.1em;
+    margin-top: 1.6em;
+    margin-bottom: 1em;
+}
+.lf_markdown h5, .lf_markdown h6 {
+    font-size: 1em;
+    display: inline-block;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    text-align: left;
+    padding: 0.3em 0.5em 0;
+    border-bottom: 1px solid #6D883E;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 .lf_markdown img/*, img.lf_img_min*/ {
     /*display: block;
