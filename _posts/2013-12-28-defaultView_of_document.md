@@ -22,7 +22,7 @@ tags:
 var win = document.defaultView;
 {% endhighlight %}
 
-该属性只读.
+*该属性只读.*
 
 ### 备注
 

@@ -1,8 +1,7 @@
 ---
 layout: post
 date: 2012-03-09 10:15
-title: javascript的getComputedStyle方法获取节点的计算后的CSS样式
-h_css: highlight_monokai
+title: javascript获取节点计算后的CSS样式
 tags:
 - 转录
 - JavaScript
