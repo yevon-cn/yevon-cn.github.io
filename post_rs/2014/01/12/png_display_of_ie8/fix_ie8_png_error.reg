@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_CLASSES_ROOT\MIME\Database\Content Type\image/png]
+"Extension"=".png"
+"Image Filter CLSID"="{A3CCEDF7-2DE2-11D0-86F4-00A0C913F750}"
+ 
+[HKEY_CLASSES_ROOT\MIME\Database\Content Type\image/png\Bits]
+"0"=hex:08,00,00,00,ff,ff,ff,ff,ff,ff,ff,ff,89,50,4e,47,0d,0a,1a,0a

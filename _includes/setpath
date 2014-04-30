@@ -4,5 +4,5 @@
   -->
   {% assign bpath = site.LF.url.bpath %}
   {% capture apath %}{{ bpath }}/{{ site.LF.url.apath }}{% endcapture %}
-  {% capture pipath %}{{ bpath }}/{{ site.LF.url.pipath }}{% endcapture %}
+  {% capture rspath %}{{ bpath }}/{{ site.LF.url.rspath }}{% endcapture %}
 {% endcapture %}{% assign _cache = nil %}
