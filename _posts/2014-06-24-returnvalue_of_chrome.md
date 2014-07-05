@@ -3,6 +3,7 @@ layout: post
 date: 2014-06-24 20:40:00
 title: "returnValue of Chrome"
 tags:
+- JavaScript
 - returnValue
 - showModalDialog
 - Chrome
@@ -180,7 +181,7 @@ tags:
 
 于是乎可以说Chrome不支持`returnValue`吧，在之后的版本中`showModalDialog`这个方法应该会被移除了，所以说这个没有什么意义了啊。
 
-如果一定要继续用`showModalDialog`的话，可以考虑在子窗口中通过`window.opener`与父窗口进行传参来代替`returnValue`的方式，而用`opne`来代替`showModalDialog`，而在子窗口打开情况下，可以在父窗口中覆盖一层div来禁用用户操作等等，还是可以将就着模拟`showModalDialog`的效果的，但要完全模拟，有点困难啊。
+如果一定要继续用`showModalDialog`的话，可以考虑在子窗口中通过`window.opener`与父窗口进行传参来代替`returnValue`的方式，而用`open`来代替`showModalDialog`，而在子窗口打开情况下，可以在父窗口中覆盖一层div来禁用用户操作等等，还是可以将就着模拟`showModalDialog`的效果的，但要完全模拟，有点困难啊。
 
 ### 参考资料
 

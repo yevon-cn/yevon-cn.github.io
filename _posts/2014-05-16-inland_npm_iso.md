@@ -5,6 +5,8 @@ title: "国内NPM镜像"
 tags:
 - NPM
 - PhoneGap
+- 镜像
+- taobao
 ---
 
 最近准备玩玩PhoneGap，在用npm安装PhoneGap的时候卡住了，这个跟rubygems一样，因为国外的东东，不稳定啊……
