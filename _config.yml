@@ -76,7 +76,11 @@ redcarpet:
 
 
 #开启语法高亮插件
-pygments: true
+pygments: true #老写法
+highlighter: pygments #新写法
+
+#时区设置 see:http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: CN #处理时区问题
 
 #生成静态内容时滤去下列不必要的文件
 exclude: ["Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]

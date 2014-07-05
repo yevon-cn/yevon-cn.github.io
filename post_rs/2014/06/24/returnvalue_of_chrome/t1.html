@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8"/>
+	<title>t1</title>
+	<script>
+		alert("load t1");
+		function openT2(){
+			alert(showModalDialog('t2.html',{msg:"arguments from t1.html",win:window},''));
+			alert('子窗口已关闭');
+		}
+		function openT1Self(){
+			alert(showModalDialog('t1.html',{msg:"arguments from t1.html",win:window},''));
+			alert('子窗口已关闭');
+		}
+		function closeSelf(){
+			window.returnValue='从t1返回的returnValue';
+			window.close();
+		}
+		if(window.dialogArguments){
+			if(window.dialogArguments.msg){
+				alert(window.dialogArguments.msg);
+			}else{
+				alert(window.dialogArguments);
+			}
+		}
+		function reloadPage(){
+			alert('before');
+			window.location.reload();
+			alert('after');
+		}
+	</script>
+	<body>
+		<a href="javascript:openT2();">打开t2</a>
+		<a href="javascript:openT1Self();">打开t1自己</a>
+		<a href="javascript:closeSelf();">关闭</a>
+		<a href="javascript:alert('点击了');">Chrome下点击测试</a>
+		<a href="javascript:reloadPage();">点击刷新</a>
+	</body>
+</html>

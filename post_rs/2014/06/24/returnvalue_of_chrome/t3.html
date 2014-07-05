@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8"/>
+	<title>t3</title>
+	<script>
+		alert("load t3");
+		function closeSelf(){
+			window.returnValue='从t3返回的returnValue';
+			window.close();
+		}
+		if(window.dialogArguments){
+			if(window.dialogArguments.msg){
+				alert(window.dialogArguments.msg);
+			}else{
+				alert(window.dialogArguments);
+			}
+		}
+		function reloadPage(){
+			alert('before');
+			window.location.reload();
+			alert('after');
+		}
+	</script>
+	<body>
+		<a href="javascript:closeSelf();">关闭</a>
+		<a href="javascript:reloadPage();">点击刷新</a>
+	</body>
+</html>

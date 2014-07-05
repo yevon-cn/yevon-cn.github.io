@@ -1,0 +1,1 @@
+<a {% if include.title %}title="{% include.title %}"{% endif %} target={% if include.target %}{{ include.target }}{% else %}_blank{% endif %} href="{% include rspath %}/{% if include.href %}{{ include.href }}{% else %}{{ include.content }}{% endif %}">{{ include.content }}</a>

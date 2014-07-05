@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8"/>
+	<title>t2</title>
+	<script>
+		alert("load t2");
+		function openT3(){
+			alert(showModalDialog('t3.html',{msg:"arguments from t2.html",win:window},''));
+			alert('子窗口已关闭');
+		}
+		function closeSelf(){
+			window.returnValue='从t2返回的returnValue';
+			window.close();
+		}
+		if(window.dialogArguments){
+			if(window.dialogArguments.msg){
+				alert(window.dialogArguments.msg);
+			}else{
+				alert(window.dialogArguments);
+			}
+		}
+		function reloadPage(){
+			alert('before');
+			window.location.reload();
+			alert('after');
+		}
+	</script>
+	<body>
+		<a href="javascript:openT3();">打开t3</a>
+		<a href="javascript:closeSelf();">关闭</a>
+		<a href="javascript:alert('点击了');">Chrome下点击测试</a>
+		<a href="javascript:reloadPage();">点击刷新</a>
+	</body>
+</html>
