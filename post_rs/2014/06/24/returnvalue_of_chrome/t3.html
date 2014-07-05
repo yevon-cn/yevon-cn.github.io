@@ -5,7 +5,7 @@
 	<script>
 		alert("load t3");
 		function closeSelf(){
-			window.returnValue='从t3返回的returnValue';
+			window.returnValue='从t3正常返回的returnValue';
 			window.close();
 		}
 		if(window.dialogArguments){
@@ -20,9 +20,15 @@
 			window.location.reload();
 			alert('after');
 		}
+		function setReturnValue(){
+			var str = prompt("请输入returnValue值")
+			window.returnValue = "t3在刷新前所赋的returnValue："+str;
+			alert("赋值完毕，请点击刷新！");
+		}
 	</script>
 	<body>
 		<a href="javascript:closeSelf();">关闭</a>
+		<a href="javascript:setReturnValue();">在刷新前给returnValue赋值</a>
 		<a href="javascript:reloadPage();">点击刷新</a>
 	</body>
 </html>

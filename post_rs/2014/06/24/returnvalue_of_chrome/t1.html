@@ -13,7 +13,7 @@
 			alert('子窗口已关闭');
 		}
 		function closeSelf(){
-			window.returnValue='从t1返回的returnValue';
+			window.returnValue='从t1正常返回的returnValue';
 			window.close();
 		}
 		if(window.dialogArguments){
@@ -28,12 +28,18 @@
 			window.location.reload();
 			alert('after');
 		}
+		function setReturnValue(){
+			var str = prompt("请输入returnValue值")
+			window.returnValue = "t1在刷新前所赋的returnValue："+str;
+			alert("赋值完毕，请点击刷新！");
+		}
 	</script>
 	<body>
 		<a href="javascript:openT2();">打开t2</a>
 		<a href="javascript:openT1Self();">打开t1自己</a>
 		<a href="javascript:closeSelf();">关闭</a>
 		<a href="javascript:alert('点击了');">Chrome下点击测试</a>
+		<a href="javascript:setReturnValue();">在刷新前给returnValue赋值</a>
 		<a href="javascript:reloadPage();">点击刷新</a>
 	</body>
 </html>

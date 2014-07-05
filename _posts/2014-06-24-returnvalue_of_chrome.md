@@ -40,7 +40,7 @@ tags:
 			alert('子窗口已关闭');
 		}
 		function closeSelf(){
-			window.returnValue='从t1返回的returnValue';
+			window.returnValue='从t1正常返回的returnValue';
 			window.close();
 		}
 		if(window.dialogArguments){
@@ -55,12 +55,18 @@ tags:
 			window.location.reload();
 			alert('after');
 		}
+		function setReturnValue(){
+			var str = prompt("请输入returnValue值")
+			window.returnValue = "t1在刷新前所赋的returnValue："+str;
+			alert("赋值完毕，请点击刷新！");
+		}
 	</script>
 	<body>
 		<a href="javascript:openT2();">打开t2</a>
 		<a href="javascript:openT1Self();">打开t1自己</a>
 		<a href="javascript:closeSelf();">关闭</a>
 		<a href="javascript:alert('点击了');">Chrome下点击测试</a>
+		<a href="javascript:setReturnValue();">在刷新前给returnValue赋值</a>
 		<a href="javascript:reloadPage();">点击刷新</a>
 	</body>
 </html>
@@ -79,7 +85,7 @@ tags:
 			alert('子窗口已关闭');
 		}
 		function closeSelf(){
-			window.returnValue='从t2返回的returnValue';
+			window.returnValue='从t2正常返回的returnValue';
 			window.close();
 		}
 		if(window.dialogArguments){
@@ -94,11 +100,17 @@ tags:
 			window.location.reload();
 			alert('after');
 		}
+		function setReturnValue(){
+			var str = prompt("请输入returnValue值")
+			window.returnValue = "t2在刷新前所赋的returnValue："+str;
+			alert("赋值完毕，请点击刷新！");
+		}
 	</script>
 	<body>
 		<a href="javascript:openT3();">打开t3</a>
 		<a href="javascript:closeSelf();">关闭</a>
 		<a href="javascript:alert('点击了');">Chrome下点击测试</a>
+		<a href="javascript:setReturnValue();">在刷新前给returnValue赋值</a>
 		<a href="javascript:reloadPage();">点击刷新</a>
 	</body>
 </html>
@@ -113,7 +125,7 @@ tags:
 	<script>
 		alert("load t3");
 		function closeSelf(){
-			window.returnValue='从t3返回的returnValue';
+			window.returnValue='从t3正常返回的returnValue';
 			window.close();
 		}
 		if(window.dialogArguments){
@@ -128,9 +140,15 @@ tags:
 			window.location.reload();
 			alert('after');
 		}
+		function setReturnValue(){
+			var str = prompt("请输入returnValue值")
+			window.returnValue = "t3在刷新前所赋的returnValue："+str;
+			alert("赋值完毕，请点击刷新！");
+		}
 	</script>
 	<body>
 		<a href="javascript:closeSelf();">关闭</a>
+		<a href="javascript:setReturnValue();">在刷新前给returnValue赋值</a>
 		<a href="javascript:reloadPage();">点击刷新</a>
 	</body>
 </html>
@@ -153,7 +171,7 @@ tags:
 
 		**PS：**在较老版本的Chrome中并不会有这里的警告及错误信息，故可能让人误以为不支持`returnValue`
 	2. 当t1.html通过`showModalDialog`打开t1.html(即自己)的时候，`returnValue`竟起作用了，但在子窗口打开的情况下父窗口仍然可以操作，不同的是的`showModalDialog`后面的语句在关闭子窗口后执行了，说明此时没有1中的那个错误了；
-	3. 但如果子页面刷新了一下的话，即便是上面2中的情形，`showModalDialog`返回值也将一直是`undefined`，这说明子页面在刷新后与父页面失去了联系，导致`returnValue`完全失效；
+	3. 但如果子页面刷新了，则无论之后给`returnValue`赋什么值，最终`showModalDialog`的返回值将一直是子页面第一次刷新前给`returnValue`所赋的值，如果第一次刷新前没有给`returnValue`赋值，则将是`undefined`，这说明子页面在刷新后与父页面失去了联系，导致`returnValue`失效；
 	4. 在子窗口打开情况下，虽然父窗口能够操作，但在父窗口中点击“点击刷新”后两个`alert`都执行了，而页面却没有刷新，说明有些特殊操作如`window.location.reload();`将会等到子窗口关闭后才会执行。
 
 
@@ -166,7 +184,7 @@ tags:
 * IE、Firefox没有问题；
 * Chrome下则`returnValue`基本有效，具体细节：
 	1. 正常操作情况下，能够通过`returnValue`返回数据，`showModalDialog`后面的代码也能在关闭子窗口后执行；
-	2. 但如果在子窗口中进行了刷新操作，则父窗口获取到的将是`undefined`，而`showModalDialog`后面的代码可以正常执行；
+	2. 但如果子页面刷新了，则无论之后给`returnValue`赋什么值，最终`showModalDialog`的返回值将一直是子页面第一次刷新前给`returnValue`所赋的值，如果第一次刷新前没有给`returnValue`赋值，则将是`undefined`，这说明子页面在刷新后与父页面失去了联系，导致`returnValue`失效；
 	3. 在子窗口打开情况下，虽然父窗口能够操作，但在父窗口中点击“点击刷新”后两个`alert`都执行了，而页面却没有刷新，说明有些特殊操作如`window.location.reload();`将会等到子窗口关闭后才会执行。
 
 
@@ -177,7 +195,7 @@ tags:
 但Chrome虽然支持`returnValue`，但使用体验却不怎么样，有以下几点：
 
 1. 打开子窗口情况下，还是能够操作父窗口；
-2. 子窗口在刷新后，`returnValue`就失效了(`window.dialogArguments`也变为`undefined`了)，始终返回`undefined`；
+2. 子窗口在刷新后，`returnValue`就失效了(`window.dialogArguments`也变为`undefined`了)，只能返回第一次刷新前的`returnValue`；
 
 于是乎可以说Chrome不支持`returnValue`吧，在之后的版本中`showModalDialog`这个方法应该会被移除了，所以说这个没有什么意义了啊。
 
