@@ -195,7 +195,7 @@ tags:
 但Chrome虽然支持`returnValue`，但使用体验却不怎么样，有以下几点：
 
 1. 打开子窗口情况下，还是能够操作父窗口；
-2. 子窗口在刷新后，`returnValue`就失效了(`window.dialogArguments`也变为`undefined`了)，只能返回第一次刷新前的`returnValue`；
+2. 子窗口在刷新后，`returnValue`就失效了(`window.dialogArguments`也变为`undefined`了)，只能返回第一次刷新前的`returnValue`(该问题可通`window.opener`传参解决，该属性指向父窗口，且不会因为刷新导致失效，具体请参考[ref1][]文中的“解决returnValue问题”小节)；
 
 于是乎可以说Chrome不支持`returnValue`吧，在之后的版本中`showModalDialog`这个方法应该会被移除了，所以说这个没有什么意义了啊。
 
