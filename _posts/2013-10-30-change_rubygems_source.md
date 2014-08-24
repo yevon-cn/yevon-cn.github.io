@@ -6,8 +6,8 @@ tags:
 - Ruby
 - RubyGems
 - gem
-- taobao
 - 镜像
+- taobao
 ---
 相信用过`Ruby`的人都知道`gem install`命令，但是在国内该命令安装的速度甚是不稳定（你懂的），导致尝试数次便是等待数时，记得之前在安装`redmine`的时候便是如此，之前不懂什么意思，还以为是命令不对呢……
 
@@ -18,7 +18,7 @@ tags:
 **用法大概如下：**
 {% highlight bash linenos %}
 # 移除默认的源
-$ gem sources --remove https://rubygems.org/
+$ gem sources --remove http://rubygems.org/
 # 添加新的源
 $ gem sources -a http://ruby.taobao.org/
 # 查看更改是否生效
@@ -30,6 +30,8 @@ http://ruby.taobao.org
 $ gem install rails
 {% endhighlight %}
 
+**后记**
+似乎每次都要重新配置下啊~
 
 **参考资料：**
 >[免费开源Github Pages空间可绑域名搭建个人博客存放图片文件][freehao123]
