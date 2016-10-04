@@ -55,7 +55,7 @@ LF:
 
 ##Jekyll配置信息##========================
 #markdown引擎
-#markdown: redcarpet
+markdown: redcarpet
 redcarpet:
   extensions:
     - underline # _用于生成下划线
