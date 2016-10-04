@@ -11,7 +11,6 @@
         <!-- 让宽度适应设备宽度 -->
         <meta name="viewport" content="width=device-width">
         <script src="{{ site.url.bpath }}{{ site.url.apath }}/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="{{ site.url.bpath }}{{ site.url.apath }}/css/highlight_monokai.css">
     {% if page.imgZoom %}
       {% if site.img.imgZoomType == 'magnific-popup' %}
         <!-- Magnific Popup core CSS file -->
@@ -75,6 +74,7 @@
       {% endif %}
     {% endif %}
          <link rel="stylesheet" href="{{ site.url.apath }}{{ site.url.theme }}/css/main.css" />
+         <link rel="stylesheet" type="text/css" href="{{ site.url.bpath }}{{ site.url.apath }}/css/highlight_monokai.css">
     </head>
     <body>
         <div class="lf_site{% if page.no_header %} lf_no_header{% endif %}{% if page.no_footer %} lf_no_footer{% endif %}{% if page.no_site_msg %} lf_no_site_msg{% endif %}{% if page.no_header and page.no_footer %} lf_no_site_msg{% endif %}">

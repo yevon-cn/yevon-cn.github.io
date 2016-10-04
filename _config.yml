@@ -75,9 +75,8 @@ redcarpet:
     #- smart #属于redcarpet，但不是extensions，http://daringfireball.net/projects/smartypants/
 
 
-#开启语法高亮插件
-pygments: true #老写法
-highlighter: pygments #新写法
+#指定语法高亮插件
+highlighter: pygments
 
 #时区设置 see:http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: CN #处理时区问题
@@ -94,4 +93,8 @@ paginate: 15
 paginate_path: /page:num
 
 
+gems:
+ - jekyll-coffeescript
+ - jekyll-paginate
+ - pygments.rb
 
