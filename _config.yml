@@ -54,10 +54,10 @@ kramdown:
 highlighter: rouge
 permalink: date
 
-collections:
-    posts:
-        output: true
-        permalink: /posts/:year/:month/:day-:title/ #
+# collections:
+#     posts:
+#         output: true
+#         permalink: /posts/:year/:month/:day-:title/ #
 
 # google analytics
 ga_tracking_id: 
