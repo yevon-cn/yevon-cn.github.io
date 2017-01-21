@@ -68,10 +68,11 @@ app_id:
 app_key: 
 app_class: 
 # plugins
-# gems:
-#   - jekyll-sitemap
-#   - jekyll-feed
-#   - jekyll-paginate
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
+  - jekyll-paginate
 # server
 server_url: "0.0.0.0"
 debug: false
