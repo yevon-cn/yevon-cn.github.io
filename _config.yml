@@ -68,28 +68,18 @@ app_id:
 app_key: 
 app_class: 
 # plugins
-gems:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
+# gems:
+#   - jekyll-sitemap
+#   - jekyll-feed
+#   - jekyll-paginate
 # server
 server_url: "0.0.0.0"
 debug: false
-
 
 ## old config
 img:
   #图片查看效果控件
   imgZoomType: fancybox
 
-#指定语法高亮插件
-# highlighter: pygments
-
 #生成静态内容时滤去下列不必要的文件
 exclude: ["Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]
-
-### URL配置
-url:
-  #base path 使用同baseurl，主要用于post.url
-  #eg: /test,/doc,http://www.test.com 最后不要/
-  bpath: 
