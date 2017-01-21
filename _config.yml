@@ -27,7 +27,7 @@ github_repo_tree:
 
 # language
 lang: zh # the language of your site
-timezone: Asia/Shanghai
+timezone: CN #Asia/Shanghai
 
 # author
 author: "Yevon"
