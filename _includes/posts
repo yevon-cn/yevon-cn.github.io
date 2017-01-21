@@ -1,5 +1,0 @@
-<ul class="lf_posts">
-    {% for post in include._posts %}
-      <li><span class="lf_post_date_label">{% include date_format date=post.date %}</span> <a title="{{ post.title }}" href="{{ site.url.bpath }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>

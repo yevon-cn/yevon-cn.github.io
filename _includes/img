@@ -1,5 +1,0 @@
-<div class="lf_img_sec">
-	<a class="lf_img_link" href="{% include rspath %}/{{ include.name }}">
-		<img class="lf_img_min" src="{% include rspath %}/{{ include.name }}" />
-	</a>
-</div>

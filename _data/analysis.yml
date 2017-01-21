@@ -5,5 +5,5 @@
 
 - name: google
   identifier: UA-45985706-1
-  domain: leafer.tk
+  domain: #cycle.ml
   using: true
