@@ -11,6 +11,8 @@ description: > # this means to ignore newlines until "baseurl:"
     Yevon's Blog | 叶风的博客
     
 baseurl: "/" # the subpath of your site, e.g. /blog
+rsurl: "/post-rs"
+surl: "/statics"
 
 # nav_lists:
 #   - title: About
@@ -54,10 +56,10 @@ kramdown:
 highlighter: rouge
 permalink: date
 
-collections:
-    posts:
-        output: true
-        permalink: /posts/:year/:month/:day-:title/ #
+# collections:
+#     posts:
+#         output: true
+#         permalink: /posts/:year/:month/:day-:title/ #
 
 # google analytics
 ga_tracking_id: 

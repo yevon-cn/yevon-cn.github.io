@@ -25,7 +25,7 @@ tags:
 
 初步写代码测试了下(只测IE、Firefox、Chrome)，我写了三个页面，主要逻辑是：t1中打开t2、t2中打开t3、同时每个页面上添加点击测试、刷新测试按钮(用于Chrome测试)，基本html代码如下，可直接点击页面地址进行浏览：
 
-##### [t1.html](./t1.html) 代码：
+##### [t1.html]({{site.rsurl}}/2014/06-24-t1.html) 代码：
 ```html
 <!doctype html>
 <html>
@@ -74,7 +74,7 @@ tags:
 </html>
 ```
 
-##### [t2.html](./t2.html) 代码：
+##### [t2.html]({{site.rsurl}}/2014/06-24-t2.html) 代码：
 ```html
 <!doctype html>
 <html>
@@ -118,7 +118,7 @@ tags:
 </html>
 ```
 
-##### [t3.html](./t3.html) 代码：
+##### [t3.html]({{site.rsurl}}/2014/06-24-t3.html) 代码：
 ```html
 <!doctype html>
 <html>

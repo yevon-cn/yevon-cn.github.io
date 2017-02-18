@@ -17,7 +17,7 @@ layout: blog-base
         </footer>
     </div>
 </div>
-<script src="//cdn.bootcss.com/emojione/2.2.6/lib/js/emojione.min.js"></script>
+<!-- <script src="//cdn.bootcss.com/emojione/2.2.6/lib/js/emojione.min.js"></script> -->
 <script>
     function affix() {
         function getMinHeight() {
@@ -87,8 +87,11 @@ layout: blog-base
     $(document).ready(function(){
         setFooterHeight();
         // display coding language //
-        $(".highlight").each(function() {
-            $(this).attr("data-lang", $(this).find("code").attr("data-lang"));
+        $(".highlighter-rouge").each(function() {
+            var lang = $.trim(($(this).attr("class")||"").replace("highlighter-rouge","").replace("language-",""));
+            if(lang!=""){
+                $(this).attr("data-lang", lang);
+            }
         });
         // picture lazy load //
         // $(".article-content img").each(function(){
@@ -97,11 +100,11 @@ layout: blog-base
         // $(".article-content img").unveil();
         // 
         affix();
-        $(".article-content").each(function() {
-            var original = $(this).html();
-            emojione.imageType = 'svg';
-            var converted = emojione.toImage(original);
-            $(this).html(converted);
-        });
+        // $(".article-content").each(function() {
+        //     var original = $(this).html();
+        //     emojione.imageType = 'svg';
+        //     var converted = emojione.toImage(original);
+        //     $(this).html(converted);
+        // });
     });
 </script>

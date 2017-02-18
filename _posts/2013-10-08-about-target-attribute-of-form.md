@@ -169,13 +169,15 @@ frameborder="0" />
 
 最后吐槽下，该[页面][page_cccx]的验证码是js生成的数字，不禁让我回想起去年写过的类似代码，只是这里的代码兼容性真是差呢，也就ie下能运行了。
 
-**参考资料：**
->[为什么铁道部的网站叫12306？](http://zhidao.baidu.com/link?url=ER04KXHiSYmxCZ7ptQCbFYIDIpUFPlcG35xSVHxX-YchSYT4Mi7uU8jeeJsnhbg4ckm_W310ePpa-TC5y6G9Na)
->[铁路客户服务中心客服电话号码](http://www.12306.cn/mormhweb/tlkytst/)
->[HTML \<form\> 标签的 target 属性](http://www.w3school.com.cn/tags/att_form_target.asp)
->[HTML 5 \<form\> target 属性](http://www.w3school.com.cn/html5/att_form_target.asp)
->[xhtml1-transitional.dtd][xhtml_dtd_transitional]
->[xhtml1-strict.dtd][xhtml_dtd_strict]
+
+**参考资料**
+
+* [为什么铁道部的网站叫12306？](http://zhidao.baidu.com/link?url=ER04KXHiSYmxCZ7ptQCbFYIDIpUFPlcG35xSVHxX-YchSYT4Mi7uU8jeeJsnhbg4ckm_W310ePpa-TC5y6G9Na)
+* [铁路客户服务中心客服电话号码](http://www.12306.cn/mormhweb/tlkytst/)
+* [HTML \<form\> 标签的 target 属性](http://www.w3school.com.cn/tags/att_form_target.asp)
+* [HTML 5 \<form\> target 属性](http://www.w3school.com.cn/html5/att_form_target.asp)
+* [xhtml1-transitional.dtd][xhtml_dtd_transitional]
+* [xhtml1-strict.dtd][xhtml_dtd_strict]
 
 [12306]:    http://www.12306.cn/
 [票价查询]: http://dynamic.12306.cn/TrainQuery/ticketPriceByStation.jsp
