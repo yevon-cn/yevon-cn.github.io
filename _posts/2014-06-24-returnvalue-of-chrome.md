@@ -4,8 +4,6 @@ date: 2014-06-24 20:40:00
 title: "returnValue of Chrome"
 tags:
 - JavaScript
-- returnValue
-- showModalDialog
 - Chrome
 ---
 

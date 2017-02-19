@@ -1,7 +1,0 @@
-{% unless page.unAnalysis %}
-  {% for _analysis in site.data.analysis %}
-  	{% if _analysis.using %}{% assign _temp = _analysis.name | prepend: 'analysis/' %}
-      	{% include {{_temp}} cfg = _analysis %}{% assign _temp = nil %}
-    {% endif %}
-  {% endfor %}
-{% endunless %}

@@ -5,9 +5,6 @@ title: 关于getComputedStyle
 tags:
 - JavaScript
 - CSS
-- style
-- getComputedStyle
-- currentStyle
 ---
 
 很多时候，在用js操作页面元素时，需要获取元素的CSS样式值，但是可能我们事先并没有给它设定样式，这种情况下就有点尴尬了。

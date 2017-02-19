@@ -1,12 +1,10 @@
 ---
 layout: post
 date: 2014-08-24 20:16:00
-title: "Photoshop中使闭合的路径开发"
+title: "Photoshop中使闭合的路径开放"
 imgZoom: true
 tags:
 - Photoshop
-- ps
-- 路径
 ---
 
 ### 环境

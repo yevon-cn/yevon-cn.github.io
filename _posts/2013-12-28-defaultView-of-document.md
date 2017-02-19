@@ -5,9 +5,6 @@ title: document.defaultView
 tags:
 - 转录
 - JavaScript
-- document
-- window
-- defaultView
 ---
 
 > 摘录自：[document.defaultView](https://developer.mozilla.org/zh-CN/docs/DOM/document.defaultView)

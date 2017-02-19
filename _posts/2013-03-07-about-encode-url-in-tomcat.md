@@ -6,8 +6,6 @@ tags:
 - Java
 - Tomcat
 - response
-- URL
-- encode
 ---
 
 ### 1、好奇

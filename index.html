@@ -1,98 +1,45 @@
 ---
-layout: blog-default
-title: Yevon's Blog
-excerpt: Yevon's Blog | 叶风的博客
+layout: page
+title: To b or not to b?
+description: "THAT IS THE QUESTION."
+header-color: "#199475"
+index: true
 ---
-<div class="left-col card">
-    <section class="home">
-        <h1 class="page-heading">Posts</h1>
-        <div class="post-list">
-            <!-- This loops through the paginated posts -->
-            {% for post in paginator.posts %}
-            <article class="post-info">
-                {% include blog/article-data.html %}
-                <div class="article-content">
-                    {{ post.excerpt }}
-                </div>
-            </article>
-            {% endfor %}
-        </div>
 
-        <!-- Pagination links -->
-        {% if paginator.total_pages > 1 %}
-        <nav class="pagination">
-            <p>{{ site.posts | size }} post articles | {{ paginator.total_pages }} pages. </p>
-            <ul class="wrapper-col">
-            {% if paginator.previous_page %}
-            <li><a class="round-button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-                <div class="icon icon--previous">{% include icon/icon-previous.svg %}</div>
-            </a></li>
-            {% else %}
-            <li><div class="round-button inactive">
-                <div class="icon icon--prrevious">{% include icon/icon-previous.svg %}</div>
-            </div></li>
-            {% endif %}
-
-            {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                <li><div class="cur-page">
-                    <div class="round-button">
-                        <span>{{ page }}</span>
-                    </div>
-                </div></li>
-                {% elsif page == 1 %}
-                <li><a class="round-button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span>{{ page }}</span></a></li>
-                {% else %}
-                <li><a class="round-button" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"><span>{{ page }}</span></a></li>
-                {% endif %}
-            {% endfor %}
-
-            {% if paginator.next_page %}
-            <li><a class="round-button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-                <div class="icon icon--next">{% include icon/icon-next.svg %}</div>
-            </a></li>
-            {% else %}
-            <li><div class="round-button inactive">
-                <div class="icon icon--next">{% include icon/icon-next.svg %}</div>
-            </div></li>
-            {% endif %}
-            </ul>
-        </nav>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-    </section>
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
 </div>
-<!-- <div class="right-col">
-    <div class="card">
-        <h1>About me</h1>
-        {% include blog/about-me.html %}
-    </div>
-    <div class="card">
-        <h1>Tags</h1>
-        {% include blog/tags.html %}
-    </div>
-</div> -->
-<!-- 
-<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
-<script>
-    $(document).ready(function() {
-        // 初始化
-        AV.init({
-            appId: '{{ site.app_id }}',
-            appKey: '{{ site.app_key }}'
-        });
-        $(".article-view").each(function() {
-            var curId = this.id;
-            var query = new AV.Query('{{ site.app_class }}');
-            query.equalTo('key', /(.*)-(.*)/.exec(curId)[2]);
-            query.first().then(function(result) {
-                if (result) {
-                    $('#' + curId).text(result.attributes.views);
-                }
-            }, function(error) {
-                if (error) {
-                    throw error;
-                }
-            });
-        });
-    });
-</script> -->
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

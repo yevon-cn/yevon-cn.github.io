@@ -1,88 +1,119 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Yevon's Blog
-description: > # this means to ignore newlines until "baseurl:"
-    Yevon's Blog | 叶风的博客
-    
-baseurl: "/" # the subpath of your site, e.g. /blog
+SEOTitle: Yevon's Blog
+header-img: #img/home-bg.jpg
+header-color: #black
+email: 
+description: "Yevon's Blog"
+keyword: "Yevon, Yevon's Blog, 个人博客"
+url: ""              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+author: "Yevon"
+
+
+# SNS settings
+RSS: false
+weibo_username:     
+zhihu_username:     
+github_username:    
+#twitter_username:  
+# facebook_username: 
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: date
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md","Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+duoshuo_username: 
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id:                            # Format: UA-xxxxxx-xx
+ga_domain: 
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+# About me
+sidebar-about: false                    # whether or not showing about me.
+sidebar-about-description:              #
+sidebar-avatar:                         # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: false
+
+
+# Friends
+friends: [
+    {
+        title: "Hux Blog",
+        href: "https://huangxuan.me"
+    }
+]
+
+# Site settings
 rsurl: "/post-rs"
-surl: "/statics"
+# surl: "/statics"
 
-# nav_lists:
-#   - title: About
-#     url: /blog/about.html
-
-# artworks:
-#   baseurl: "/artworks"
-
-url: #"" # the base hostname & protocol for your site
-repository: #
-# site github reop url
-github_repo: 
-github_repo_tree: 
+# repository: #
+# # site github reop url
+# github_repo: 
+# github_repo_tree: 
 
 # language
 lang: zh # the language of your site
 timezone: CN #Asia/Shanghai
 
-# author
-author: "Yevon"
-avata_url: 
-bio: 
-email: 
-twitter_username: 
-github_username:  
-googleplus_username: 
-weibo_username: 
-douban_username: 
-homepage_url: 
+# avata_url: 
+# bio: 
+# homepage_url: 
 
-## develop
-## paginate
-paginate: 7
-paginate_path: /page:num
-# Basic settings
-excerpt_separator: <!--more-->
-# Build settings
-markdown: kramdown
-kramdown:
-    input: GFM
-highlighter: rouge
-permalink: date
+# ## develop
+# excerpt_separator: <!--more-->
+# # collections:
+# #     posts:
+# #         output: true
+# #         permalink: /posts/:year/:month/:day-:title/ #
 
-# collections:
-#     posts:
-#         output: true
-#         permalink: /posts/:year/:month/:day-:title/ #
-
-# google analytics
-ga_tracking_id: 
-# comment
-duoshuo_shortname: 
-# leancloud vies
-app_id: 
-app_key: 
-app_class: 
-# plugins
-gems:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jemoji
-  - jekyll-paginate
-# server
-server_url: "0.0.0.0"
-debug: false
-
-## old config
-img:
-  #图片查看效果控件
-  imgZoomType: fancybox
-
-#生成静态内容时滤去下列不必要的文件
-exclude: ["Gemfile", "Gemfile.lock","README.md","Rakefile","log.md"]
+# ## old config
+# img:
+#   #图片查看效果控件
+#   imgZoomType: fancybox

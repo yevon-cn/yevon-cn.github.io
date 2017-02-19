@@ -5,8 +5,6 @@ title: "IE8突然显示不了PNG图片了……"
 tags:
 - IE
 - PNG
-- 图片
-- IE8
 ---
 
 ### 唠叨

@@ -4,8 +4,6 @@ title: "还没更换RubyGems镜像？"
 date: 2013-10-30 21:33:32
 tags: 
 - Ruby
-- RubyGems
-- gem
 - 镜像
 - taobao
 ---
@@ -18,7 +16,8 @@ tags:
 
 很遗憾的是，目前我还没去体验过那个高速的感觉，但是这个绝对是真实可用的~
 
-**用法大概如下：**
+### 用法大概如下：
+
 ```bash
 # 移除默认的源
 $ gem sources --remove http://rubygems.org/
@@ -33,10 +32,12 @@ http://ruby.taobao.org
 $ gem install rails
 ```
 
-**后记**
+### 后记
+
 似乎每次都要重新配置下啊~
 
-**参考资料：**
+### 参考资料
+
 >[免费开源Github Pages空间可绑域名搭建个人博客存放图片文件][freehao123]
 >[RubyGems 镜像 - 淘宝网][taobao_ruby]
 

@@ -6,7 +6,6 @@ tags:
 - 转录
 - JavaScript
 - CSS
-- style
 ---
 
 > 转录自：[javascript的getComputedStyle方法获取节点的计算后的CSS样式](http://www.cnblogs.com/yunfour/archive/2012/02/25/2367895.html)
