@@ -6,7 +6,7 @@ header-color: #black
 email: 
 description: "Yevon's Blog"
 keyword: "Yevon, Yevon's Blog, 个人博客"
-url: ""              # your host, for absolute URL
+url: "https://yevon-cn.github.io"       # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 author: "Yevon"
 
