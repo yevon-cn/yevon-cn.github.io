@@ -58,7 +58,7 @@ disqus_username: yevon-cn
 
 # Analytics settings
 # Baidu Analytics 
-# ba_track_id: [your track id]
+ba_track_id: 22a5f092e410744efb37dc736c9ea444
 
 # Google Analytics
 ga_track_id:                            # Format: UA-xxxxxx-xx
